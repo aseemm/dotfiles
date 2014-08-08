@@ -35,3 +35,7 @@ git remote # administer remote connections
 git fetch # fetch, no integrate
 git pull # fetch with merge
 git push # move to another repo
+
+git diff # diff between working directory and index
+git diff -cached # diff between most recent commit and index
+git diff HEAD # diff betwen working directory and most recent commit
