@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# ln -s ~/.dotfiles/.cshrc ~/.cshrc
+ln -s ~/.dotfiles/.bashrc ~/.bashrc
+ln -s ~/.dotfiles/.bashrc_custom ~/.bashrc_custom
 ln -s ~/.dotfiles/.emacs ~/.emacs
 ln -s ~/.dotfiles/elisp ~/elisp
 ln -s ~/.dotfiles/Xresources ~/Xresources

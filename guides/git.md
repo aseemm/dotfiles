@@ -15,7 +15,7 @@ git init # initializes a new repo
 git clone # creates a copy of an existing repo
 git config # setup configuration options for git installation
 
-git add/rm # move changes to staging snapshot
+git add/rm guides/git.md # move changes to staging snapshot
 git commit # takes staged snapshot and commits it to project history
 git commit -a # commit with add
 

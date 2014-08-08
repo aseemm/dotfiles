@@ -1,1 +1,1 @@
-alias aterm="/nfs/users/amaheshwari/bin/aterm -tr -trsb -fn '-misc-fixed-medium-r-normal-*-*-120-*-*-c-*-iso8859-1' -sr -si -bg grey -fg white -fade 10 -tn xterm -rv -tint darkgrey -sh 80" 
+alias aterm="/usr/bin/aterm -tr -trsb -fn '-misc-fixed-medium-r-normal-*-*-120-*-*-c-*-iso8859-1' -sr -si -bg grey -fg white -fade 10 -tn xterm -rv -tint darkgrey -sh 80" 
