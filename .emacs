@@ -4,8 +4,8 @@
 ;; Types
 (setq at-winnt-p (or (eq system-type `windows-nt)
 		     (eq system-type `cygwin)))
-(setq at-cavium-p (string-match "caveonetworks.com" (system-name)))
-(setq at-work-p  (or at-cavium-p))
+(setq at-company-p (string-match "caveonetworks.com" (system-name)))
+(setq at-work-p  (or at-company-p))
 (setq mail-ok-p  (file-readable-p (expand-file-name "~aseemm/Mail/.wmail_config.pl")))
 
 ;; Load-path before group startup
@@ -74,7 +74,7 @@
 ;;(load "c-mode")
 (setq-default c-tab-always-indent nil)
 ;; Styles must be set before group-c-mode, so appears later in hook list
-;;(when at-cavium-p
+;;(when at-company-p
 ;;  (add-hook 'c-mode-common-hook '(lambda ()
 ;;				   (c-set-style "gnu"))))
 ;;(group-c-mode)
@@ -162,7 +162,7 @@ otherwise simply call next-line."
 ;; 	    mail-archive-file-name nil
 ;; 	    user-full-name "Aseem Maheshwari"
 ;; 	    user-mail-address-ext      "aseemm@gmail.com"
-;; 	    user-mail-address-work (cond (at-cavium-p "aseemm@caviumnetworks.com")
+;; 	    user-mail-address-work (cond (at-company-p "aseemm@company.com")
 ;; 					 (t "aseemm@unknown-work.unknown"))
 ;; 	    )
 ;;       (setq user-mail-address (if at-work-p user-mail-address-work
