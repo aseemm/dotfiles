@@ -1,4 +1,4 @@
-# Getting Started Guide
+# Misc Guide
 
 ### vnc
 vncserver -geometry 1850x1050 -alwaysshared -nolisten local
