@@ -12,6 +12,7 @@ sudo apt-get install aterm
 # g++, etc
 sudo apt-get install build-essential
 sudo apt-get install ddd
+sudo apt-get install gtkwave
 
 # chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
