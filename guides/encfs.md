@@ -9,6 +9,7 @@ Install macports (https://www.macports.org/install.php)
 ## Install TrueCrypt
 Install EncFs
   522  sudo port install encfs
+  523  sudo port install emacs-app
 
 # Usage
 
