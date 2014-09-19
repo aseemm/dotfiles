@@ -1,20 +1,17 @@
 #!/bin/bash
-ln -s ~/.dotfiles/.bashrc ~/.bashrc
-ln -s ~/.dotfiles/.bashrc_custom ~/.bashrc_custom
 ln -s ~/.dotfiles/.emacs ~/.emacs
 ln -s ~/.dotfiles/elisp ~/elisp
-ln -s ~/.dotfiles/Xresources ~/Xresources
 
-# aterm
-sudo apt-get install aterm
+# xcode, from App Store
+Install Xcode
+  502  xcode-select --install
+  503  xcode-select -p
 
-# g++, etc
-sudo apt-get install build-essential
-sudo apt-get install ddd
-sudo apt-get install gtkwave
+# macports, https://www.macports.org/install.php
+Install macports 
 
-# chrome
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-sudo apt-get update
-sudo apt-get install google-chrome-stable
+# encfs, http://emmanuelbernard.com/blog/2013/07/01/encrypt-your-dropbox-with-encfs-on-mac-os-x/
+sudo port install encfs
+
+# emacs-app, http://wikemacs.org/wiki/Installing_Emacs_on_OS_X
+sudo port install emacs-app
