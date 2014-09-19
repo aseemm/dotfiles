@@ -6,17 +6,17 @@
 		     (eq system-type `cygwin)))
 (setq at-company-p (string-match "caveonetworks.com" (system-name)))
 (setq at-work-p  (or at-company-p))
-(setq mail-ok-p  (file-readable-p (expand-file-name "~aseemm/Mail/.wmail_config.pl")))
+(setq mail-ok-p  (file-readable-p (expand-file-name "~/Mail/.wmail_config.pl")))
 
 ;; Load-path before group startup
-(setq my-load-path (list (expand-file-name "~aseemm/elisp")
+(setq my-load-path (list (expand-file-name "~/elisp")
 			 ))
 (setq load-path (append my-load-path load-path))
 
 ;; Work Group Startup
 (cond ((boundp `site-start-version))
-      ((file-exists-p "~aseemm/elisp/site-start.el")
-       (load-file "~aseemm/elisp/site-start.el")))
+      ((file-exists-p "~/elisp/site-start.el")
+       (load-file "~/elisp/site-start.el")))
 
 
 ;; (when (or at-veripool-p at-svaha-p at-winnt-p)
@@ -35,17 +35,17 @@
 			    (match-string 1 (system-name))))))
     (setq frame-title-format mach-title)) ;(multiple-frames "%b" ("" invocation-name "@" system-name))
   (setq default-frame-alist
-	(append (list
-		 ;; 87% 78% 73%
-		 '(background-color . "#e1e1c8c8bbbb")
-		 '(scroll-bar-background . "#e1e1c8c8bbbb")
-		 '(foreground-color . "#000000000000")
-		 ;;(cons (cons 'font "-misc-fixed-medium-r-normal--13-*-*-*-c-70-iso8859-1")
-		 '(vertical-scroll-bars . right)
-		 '(tool-bar-lines . 0)
-		 ;;'(icon-type . t)
-		 )
-		default-frame-alist)))
+  	(append (list
+  		 ;; 87% 78% 73%
+  		 ;; '(background-color . "#e1e1c8c8bbbb")
+  		 ;; '(scroll-bar-background . "#e1e1c8c8bbbb")
+  		 ;; '(foreground-color . "#000000000000")
+  		 ;;(cons (cons 'font "-misc-fixed-medium-r-normal--13-*-*-*-c-70-iso8859-1")
+  		 '(vertical-scroll-bars . right)
+  		 '(tool-bar-lines . 0)
+  		 ;;'(icon-type . t)
+  		 )
+  		default-frame-alist)))
 ;; Always show frame name as the machine name
 (setq-default mode-line-frame-identification
 	      ;; '("-%F  "))
@@ -258,14 +258,14 @@ otherwise simply call next-line."
 (defalias 'mkdir 'make-directory)
 
 ;; Crypt hooks
-(when (file-exists-p (expand-file-name "~/elisp/crypt++-add.el"))
-  ;; Uncompress .gz & .Z's
-  (require 'jka-compr)
-  ;; Crypt .pgp files
-  (require 'crypt++-add)
-  ;;
-  (setq crypt-timer-interval (* 10 60))
-  )
+;; (when (file-exists-p (expand-file-name "~/elisp/crypt++-add.el"))
+;;   ;; Uncompress .gz & .Z's
+;;   (require 'jka-compr)
+;;   ;; Crypt .pgp files
+;;   (require 'crypt++-add)
+;;   ;;
+;;   (setq crypt-timer-interval (* 10 60))
+;;   )
 
 ; Buffer Display
 (defun list-buffers (&optional files-only)
@@ -335,31 +335,31 @@ Example:
 (blink-cursor-mode 0)
 
 ;; Font-lock
-(when (and window-system (>= emacs-major-version 20))
-  (cond (emacs-type-xemacs
-	 (setq font-lock-mode-disable-list '(books-mode art-mode sim-log-mode))
-	 )
-	(t
-	 (setq font-lock-global-modes '(not books-mode art-mode sim-log-mode))
-					;rmail-mode rmail-summary-mode
-	 (global-font-lock-mode 1 nil)
-	 ))
-  ;; Verilog-mode.el is just over the default 256K limit
-  (setq font-lock-maximum-size 300000)
-  ;; Don't use light colors, I can't see them
-  (custom-set-faces
-   '(font-lock-string-face ((t (:foreground "Brown"))))
-   '(font-lock-builtin-face ((((class color) (background light)) (:foreground "VioletRed"))))
-   '(font-lock-comment-face ((((class color) (background light)) (:foreground "Firebrick"))))
-   '(font-lock-reference-face ((t (:foreground "MediumBlue"))))
-   '(font-lock-string-face ((t (:foreground "Brown"))))
-   '(font-lock-keyword-face ((((class color) (background light)) (:foreground "Purple"))))
-   '(font-lock-warning-face ((t (:bold t :foreground "OrangeRed"))))
-   '(font-lock-type-face ((t (:foreground "DarkGreen"))))
-   '(font-lock-variable-name-face ((t (:foreground "Maroon"))))
-   '(font-lock-function-name-face ((((class color) (background light)) (:foreground "Blue"))))
-   '(font-lock-builtin-face ((((class color) (background light)) (:foreground "VioletRed"))))
-   ))
+;; (when (and window-system (>= emacs-major-version 20))
+;;   (cond (emacs-type-xemacs
+;; 	 (setq font-lock-mode-disable-list '(books-mode art-mode sim-log-mode))
+;; 	 )
+;; 	(t
+;; 	 (setq font-lock-global-modes '(not books-mode art-mode sim-log-mode))
+;; 					;rmail-mode rmail-summary-mode
+;; 	 (global-font-lock-mode 1 nil)
+;; 	 ))
+;;   ;; Verilog-mode.el is just over the default 256K limit
+;;   (setq font-lock-maximum-size 300000)
+;;   ;; Don't use light colors, I can't see them
+;;   (custom-set-faces
+;;    '(font-lock-string-face ((t (:foreground "Brown"))))
+;;    '(font-lock-builtin-face ((((class color) (background light)) (:foreground "VioletRed"))))
+;;    '(font-lock-comment-face ((((class color) (background light)) (:foreground "Firebrick"))))
+;;    '(font-lock-reference-face ((t (:foreground "MediumBlue"))))
+;;    '(font-lock-string-face ((t (:foreground "Brown"))))
+;;    '(font-lock-keyword-face ((((class color) (background light)) (:foreground "Purple"))))
+;;    '(font-lock-warning-face ((t (:bold t :foreground "OrangeRed"))))
+;;    '(font-lock-type-face ((t (:foreground "DarkGreen"))))
+;;    '(font-lock-variable-name-face ((t (:foreground "Maroon"))))
+;;    '(font-lock-function-name-face ((((class color) (background light)) (:foreground "Blue"))))
+;;    '(font-lock-builtin-face ((((class color) (background light)) (:foreground "VioletRed"))))
+;;    ))
 
 (defun del ()
   (interactive)
@@ -449,12 +449,12 @@ Example:
   (global-set-key [f2] 'my-buffer-next)
   (global-set-key [f3] 'other-window)
   (global-set-key [f4] 'goto-line)
-  (global-set-key [f5] (lambda () (interactive) (find-file "~aseemm/") (delete-other-windows) (goto-char 12000)))
+  (global-set-key [f5] (lambda () (interactive) (find-file "~/") (delete-other-windows) (goto-char 12000)))
   (global-set-key [f6] 'call-last-kbd-macro)
   (global-set-key [f7] 'save-buffer)
   (global-set-key [f8] 'save-some-buffers)
   (global-set-key [f9] 'font-lock-mode)
-  (global-set-key [f17] (lambda () (interactive) (dired "~aseemm/")))
+  (global-set-key [f17] (lambda () (interactive) (dired "~/")))
   )
 
 ;; (if emacs-type-xemacs
@@ -477,7 +477,7 @@ Example:
 
 (defun mail-pop-to ()
   (interactive)
-  (setq sendmail-program (expand-file-name "~aseemm/global/bin/ssh_sendmail"))
+  (setq sendmail-program (expand-file-name "~/global/bin/ssh_sendmail"))
   ;(setq smtpmail-default-smtp-server "smtp.ma.ultranet.com")
   ;(setq smtpmail-default-smtp-server "smtp.rcn.com")
   ;(setq smtpmail-local-domain nil)
@@ -555,7 +555,7 @@ Example:
 (insert "\n")	;; So really don't get startup message in V20
 
 (if (file-exists-p "c:/home/")
-    (dired "~aseemm/"))
+    (dired "~/"))
 
 ;; (when system-type-microsoft
 ;;   (setq  c-indent-level                4
@@ -595,50 +595,50 @@ Example:
 ;;   M-x delimit-columns-region
 
 ;; CUSTOM
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(font-lock-builtin-face ((((class color) (background light)) (:foreground "VioletRed"))))
- '(font-lock-comment-face ((((class color) (background light)) (:foreground "Firebrick"))))
- '(font-lock-function-name-face ((((class color) (background light)) (:foreground "Blue"))))
- '(font-lock-keyword-face ((((class color) (background light)) (:foreground "Purple"))))
- '(font-lock-reference-face ((t (:foreground "MediumBlue"))))
- '(font-lock-string-face ((t (:foreground "Brown"))))
- '(font-lock-type-face ((t (:foreground "DarkGreen"))))
- '(font-lock-variable-name-face ((t (:foreground "Maroon"))))
- '(font-lock-warning-face ((t (:bold t :foreground "OrangeRed"))))
- '(fringe ((((class color) (background light)) (:background "#c0c0c0c0bbbb"))))
- '(hyper-apropos-section-heading ((t (:bold t))))
- '(info-node ((t (:bold t))))
- '(message-cited-text ((t nil)))
- '(message-header-newsgroups-face ((((class color) (background light)) (:foreground "blue4" :bold t))) t)
- '(sh-heredoc ((((class color) (background light)) (:foreground "tan4"))))
- '(shadow ((((class color) (min-colors 8) (background light)) (:foreground "blue1"))))
- '(subscript ((t nil)))
- '(comint-highlight-prompt ((t (:foreground "green"))))
- '(default ((t (:stipple nil :foreground "White" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 94 :width normal :family "misc-fixed"))))
- '(Plum1 ((t (:stipple nil :foreground "Plum1" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 94 :width normal :family "misc-fixed"))))
- '(border ((t (:background "blue"))))
- '(comint-highlight-input ((t (:foreground "white" :weight bold))))
- '(comint-highlight-prompt ((t (:foreground "green"))))
- '(cursor ((t (:background "green"))))
- '(custom-comment-face ((((class grayscale color) (background dark)) (:background "blue"))))
- '(cyan ((t (:stipple nil :foreground "cyan" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 94 :width normal :family "misc-fixed"))))
- '(cyan-bold ((t (:stipple nil :foreground "cyan" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 94 :width normal :family "misc-fixed"))))
- '(fringe ((t nil)))
- '(green ((t (:stipple nil :foreground "green" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 80 :width normal :family "adobe-courier"))))
- '(isearch ((t (:background "pink3" :foreground "white"))))
- '(isearch-lazy-highlight-face ((t (:background "magenta4"))))
- '(moccasin ((t (:stipple nil :foreground "moccasin" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 80 :width normal :family "adobe-courier"))))
- '(mouse ((t (:background "black"))))
- '(orange ((t (:stipple nil :foreground "orange" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 94 :width normal :family "misc-fixed"))))
- '(region ((t (:background "green" :foreground "White"))))
- '(rpm-spec-tag-face ((((class color) (background dark)) (:foreground "green"))))
- '(tomato ((t (:stipple nil :foreground "tomato" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 94 :width normal :family "misc-fixed"))))
- '(yellow ((t (:stipple nil :foreground "yellow" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 94 :width normal :family "misc-fixed"))))
- )
+;; (custom-set-faces
+;;   ;; custom-set-faces was added by Custom.
+;;   ;; If you edit it by hand, you could mess it up, so be careful.
+;;   ;; Your init file should contain only one such instance.
+;;   ;; If there is more than one, they won't work right.
+;;  '(font-lock-builtin-face ((((class color) (background light)) (:foreground "VioletRed"))))
+;;  '(font-lock-comment-face ((((class color) (background light)) (:foreground "Firebrick"))))
+;;  '(font-lock-function-name-face ((((class color) (background light)) (:foreground "Blue"))))
+;;  '(font-lock-keyword-face ((((class color) (background light)) (:foreground "Purple"))))
+;;  '(font-lock-reference-face ((t (:foreground "MediumBlue"))))
+;;  '(font-lock-string-face ((t (:foreground "Brown"))))
+;;  '(font-lock-type-face ((t (:foreground "DarkGreen"))))
+;;  '(font-lock-variable-name-face ((t (:foreground "Maroon"))))
+;;  '(font-lock-warning-face ((t (:bold t :foreground "OrangeRed"))))
+;;  '(fringe ((((class color) (background light)) (:background "#c0c0c0c0bbbb"))))
+;;  '(hyper-apropos-section-heading ((t (:bold t))))
+;;  '(info-node ((t (:bold t))))
+;;  '(message-cited-text ((t nil)))
+;;  '(message-header-newsgroups-face ((((class color) (background light)) (:foreground "blue4" :bold t))) t)
+;;  '(sh-heredoc ((((class color) (background light)) (:foreground "tan4"))))
+;;  '(shadow ((((class color) (min-colors 8) (background light)) (:foreground "blue1"))))
+;;  '(subscript ((t nil)))
+;;  '(comint-highlight-prompt ((t (:foreground "green"))))
+;;  '(default ((t (:stipple nil :foreground "White" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 94 :width normal :family "misc-fixed"))))
+;;  '(Plum1 ((t (:stipple nil :foreground "Plum1" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 94 :width normal :family "misc-fixed"))))
+;;  '(border ((t (:background "blue"))))
+;;  '(comint-highlight-input ((t (:foreground "white" :weight bold))))
+;;  '(comint-highlight-prompt ((t (:foreground "green"))))
+;;  '(cursor ((t (:background "green"))))
+;;  '(custom-comment-face ((((class grayscale color) (background dark)) (:background "blue"))))
+;;  '(cyan ((t (:stipple nil :foreground "cyan" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 94 :width normal :family "misc-fixed"))))
+;;  '(cyan-bold ((t (:stipple nil :foreground "cyan" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 94 :width normal :family "misc-fixed"))))
+;;  '(fringe ((t nil)))
+;;  '(green ((t (:stipple nil :foreground "green" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 80 :width normal :family "adobe-courier"))))
+;;  '(isearch ((t (:background "pink3" :foreground "white"))))
+;;  '(isearch-lazy-highlight-face ((t (:background "magenta4"))))
+;;  '(moccasin ((t (:stipple nil :foreground "moccasin" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 80 :width normal :family "adobe-courier"))))
+;;  '(mouse ((t (:background "black"))))
+;;  '(orange ((t (:stipple nil :foreground "orange" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 94 :width normal :family "misc-fixed"))))
+;;  '(region ((t (:background "green" :foreground "White"))))
+;;  '(rpm-spec-tag-face ((((class color) (background dark)) (:foreground "green"))))
+;;  '(tomato ((t (:stipple nil :foreground "tomato" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 94 :width normal :family "misc-fixed"))))
+;;  '(yellow ((t (:stipple nil :foreground "yellow" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 94 :width normal :family "misc-fixed"))))
+;;  )
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
@@ -663,9 +663,14 @@ Example:
 (setq color-theme-is-global t)
 (color-theme-initialize)
 ;; (color-theme-calm-forest)
-(load-file "~aseemm/elisp/color-theme-solarized.el")
-(color-theme-solarized-dark)
-(set-face-background `modeline "#626262")
+;; (color-theme-dark-laptop)
+;; (color-theme-charcoal-black)
+;; (color-theme-comidia)
+(color-theme-billw)
+
+;; (load-file "~/elisp/color-theme-solarized.el")
+;; (color-theme-solarized-dark)
+;; (set-face-background `modeline "#626262")
 
 ;; don't create backup files
 (setq make-backup-files nil)

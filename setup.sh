@@ -1,5 +1,4 @@
 #!/bin/bash
-
 ln -s ~/.dotfiles/.bashrc ~/.bashrc
 ln -s ~/.dotfiles/.bashrc_custom ~/.bashrc_custom
 ln -s ~/.dotfiles/.emacs ~/.emacs
