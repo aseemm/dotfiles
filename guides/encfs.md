@@ -12,8 +12,10 @@ Install EncFs
 
 # Usage
 
-### Create a new voluem
-encfs ~/Dropbox/Private.enc/ ~/Private/ # mounts the encrypted ~/Dropbox/Private.enc directory as ~/Private/ and under the volume name Dropbox private
+### Create a new volume
+# mounts the encrypted ~/Dropbox/Private.enc directory as ~/Private/ and under the volume name Dropbox private
+encfs ~/Dropbox/Private.enc/ ~/Dropbox-Private/ 
+encfs ~/Documents/Dropbox/Private.enc/ ~/Dropbox-Private/ 
 
 To store EncFS on a file system that is case insensitive for lookup,
 (VFAT, NTFS, HFS+, etc), create it using expert mode and select B32Block or
