@@ -4,7 +4,7 @@
 git init
 git add .
 git commit -m "first commit"
-git remote add origin https://github.com/aseemm/jenkins-style.git
+git remote add origin https://github.com/aseemm/jenkins-style.git # git remote add origin https://aseemm@bitbucket.org/aseemm/d3.git
 git push -u origin master
 
 ### Clone an existing repo
