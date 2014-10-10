@@ -1,4 +1,4 @@
-;; -*- Emacs-Lisp -*-
+; -*- Emacs-Lisp -*-
 ;;
 
 ;; Types
@@ -454,6 +454,7 @@ Example:
   (global-set-key [f7] 'save-buffer)
   (global-set-key [f8] 'save-some-buffers)
   (global-set-key [f9] 'font-lock-mode)
+  (global-set-key [f16] 'my-haskell-load-and-run)
   (global-set-key [f17] (lambda () (interactive) (dired "~/")))
   )
 
@@ -685,3 +686,19 @@ Example:
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+;; haskell mode
+(load "~/elisp/haskell-mode-2.8.0/haskell-site-file")
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+
+(defun my-haskell-load-and-run ()
+  "Loads and runs the current Haskell file."
+  (interactive)
+  (let ((start-buffer (current-buffer)))
+    (inferior-haskell-load-and-run inferior-haskell-run-command)
+    (sleep-for 0 100)
+    (end-of-buffer)
+    (pop-to-buffer start-buffer)))
+
+
