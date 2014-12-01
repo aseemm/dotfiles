@@ -5,7 +5,7 @@ Install Xcode
   503  xcode-select -p
 Install macports (https://www.macports.org/install.php)
 ## Install MacFUSE (https://code.google.com/p/macfuse/downloads/detail?name=MacFUSE-2.0.3%2C2.dmg&can=2&q=)
-## Install osxfuse
+## Install osxfuse (https://osxfuse.github.io/)
 ## Install TrueCrypt
 Install EncFs
   522  sudo port install encfs
@@ -14,8 +14,8 @@ Install EncFs
 
 ### Create a new volume
 # mounts the encrypted ~/Dropbox/Private.enc directory as ~/Private/ and under the volume name Dropbox private
-encfs ~/Dropbox/Private.enc/ ~/Dropbox-Private/ 
-encfs ~/Documents/Dropbox/Private.enc/ ~/Dropbox-Private/ 
+Work Macbook - encfs ~/Dropbox/Private.enc/ ~/Dropbox-Private/ 
+Home Macbook - encfs ~/Documents/Dropbox/Private.enc/ ~/Dropbox-Private/ 
 
 To store EncFS on a file system that is case insensitive for lookup,
 (VFAT, NTFS, HFS+, etc), create it using expert mode and select B32Block or
@@ -24,3 +24,4 @@ Using cipher Blowfish, key size 160, block size 512
 
 # Unmount
 umount ~/Dropbox/Private.enc/ 
+umount ~/Documents/Dropbox/Private.enc/ 
