@@ -21,9 +21,11 @@ sudo apt-get update
 sudo apt-get install google-chrome-stable
 ### google-chrome
 
-# python3, flask (within venv)
-  #  87  sudo apt-get install curl
-  #  93  sudo apt-get install python3
+# python3
+sudo apt-get install curl
+sudo apt-get install python3
+
+# flash (within venv)
   #  95  python3 -m venv flask --without-pip
   #  97  source flask/bin/activate
   # 100  cd flask
