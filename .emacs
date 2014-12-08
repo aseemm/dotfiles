@@ -655,7 +655,6 @@ Example:
 (put 'scroll-left 'disabled nil)
 (setq load-home-init-file t) ; don't load init file from ~/.xemacs/init.el
 
-
 (fset 'yes-or-no-p 'y-or-n-p) ; Use "y or n" answers instead of full words "yes or no"
 (ansi-color-for-comint-mode-on) ; interpret and use ansi color codes in shell output windows   
 (require 'paren) ; load paren highlighting
