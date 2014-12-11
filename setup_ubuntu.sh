@@ -25,5 +25,8 @@ sudo apt-get install google-chrome-stable
 sudo apt-get install -y curl
 sudo apt-get install -y python3
 
+# heroku toolbelt
+wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
 # restart
 source ~/.bashrc
