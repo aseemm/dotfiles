@@ -37,5 +37,6 @@ git pull # fetch with merge
 git push # move to another repo
 
 git diff # diff between working directory and index
+git difftool
 git diff -cached # diff between most recent commit and index
 git diff HEAD # diff betwen working directory and most recent commit

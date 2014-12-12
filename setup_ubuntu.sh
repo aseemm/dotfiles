@@ -13,6 +13,7 @@ sudo apt-get install -y rlwrap
 sudo apt-get install build-essential
 sudo apt-get install ddd
 sudo apt-get install gtkwave
+sudo apt-get install tkcvs
 
 # chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
