@@ -7,6 +7,7 @@ Install macports (https://www.macports.org/install.php)
 ## Install MacFUSE (https://code.google.com/p/macfuse/downloads/detail?name=MacFUSE-2.0.3%2C2.dmg&can=2&q=)
 ## Install osxfuse (https://osxfuse.github.io/)
 ## Install TrueCrypt
+export PATH=$PATH:/opt/local/bin
 Install EncFs
   522  sudo port install encfs
 
