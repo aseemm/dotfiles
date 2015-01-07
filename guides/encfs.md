@@ -4,6 +4,7 @@ Install Xcode
   502  xcode-select --install
   503  xcode-select -p
 Install macports (https://www.macports.org/install.php)
+  510  export PATH=$PATH:/opt/local/bin
 ## Install MacFUSE (https://code.google.com/p/macfuse/downloads/detail?name=MacFUSE-2.0.3%2C2.dmg&can=2&q=)
 ## Install osxfuse (https://osxfuse.github.io/)
 ## Install TrueCrypt
