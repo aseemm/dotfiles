@@ -29,5 +29,12 @@ sudo apt-get install -y python3
 # heroku toolbelt
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
+# keepass
+   30  sudo apt-get install python-software-properties
+   31  sudo apt-add-repository ppa:jtaylor/keepass
+   32  sudo apt-get update
+   33  sudo apt-get install keepass2
+### keepass2
+
 # restart
 source ~/.bashrc
