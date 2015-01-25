@@ -36,5 +36,9 @@ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
    33  sudo apt-get install keepass2
 ### keepass2
 
+# calibre
+sudo -v && wget -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
+
 # restart
 source ~/.bashrc
+
