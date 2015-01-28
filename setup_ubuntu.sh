@@ -40,6 +40,16 @@ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 sudo -v && wget -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
 ### calibre
 
+# dropbox
+echo 'deb http://linux.dropbox.com/ubuntu precise main' >> 'dropbox.list'
+chmod 644 dropbox.list
+sudo chown root:root 'dropbox.list'
+sudo mv 'dropbox.list' '/etc/apt/sources.list.d/dropbox.list'
+sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
+sudo apt-get update && sudo apt-get install dropbox
+### dropbox start -i
+### dropbox stop
+
 # restart
 source ~/.bashrc
 
