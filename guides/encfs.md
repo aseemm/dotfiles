@@ -25,5 +25,4 @@ B32Stream as the filename cipher to use
 Using cipher Blowfish, key size 160, block size 512
 
 # Unmount
-umount ~/Dropbox/Private.enc/ 
-umount ~/Documents/Dropbox/Private.enc/ 
+umount ~/Dropbox-Private/ 
