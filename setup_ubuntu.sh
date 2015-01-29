@@ -50,6 +50,11 @@ sudo apt-get update && sudo apt-get install dropbox
 ### dropbox start -i
 ### dropbox stop
 
+# encfs
+sudo apt-get install encfs
+### encfs ~/Dropbox/Books.enc/ ~/Dropbox-Books
+### sudo umount -f ~/Dropbox-Books
+
 # restart
 source ~/.bashrc
 
