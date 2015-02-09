@@ -49,6 +49,7 @@ sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
 sudo apt-get update && sudo apt-get install dropbox
 ### dropbox start -i
 ### dropbox stop
+### http://www.dropboxwiki.com/tips-and-tricks/install-dropbox-in-an-entirely-text-based-linux-environment#Post-installation
 
 # encfs
 sudo apt-get install encfs
