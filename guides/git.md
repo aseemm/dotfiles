@@ -65,3 +65,7 @@ git diff <oldcommitid> <newcommitid>
 
 ## login using https protocol
 git remote set-url origin https://aseemm@github.com/aseemm/dotfiles.git
+
+## changing remote
+git remote -v
+git remote set-url origin https://aseemm@github.com/aseemm/dotfiles.git
