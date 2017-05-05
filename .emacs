@@ -652,13 +652,24 @@ Example:
 ;;  )
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "4c7a1f0559674bf6d5dd06ec52c8badc5ba6e091f954ea364a020ed702665aa1" default)))
  '(delete-selection-mode nil)
  '(load-home-init-file t t)
- '(safe-local-variable-values (quote ((c-brace-offset . -4) (c-argdecl-indent . 4) (c-label-offset . -4) (c-continued-statement-offset . 4) (TeX-master . "icet") (checkdoc-permit-comma-termination-flag . t) (checkdoc-force-docstrings-flag))))
+ '(safe-local-variable-values
+   (quote
+    ((c-brace-offset . -4)
+     (c-argdecl-indent . 4)
+     (c-label-offset . -4)
+     (c-continued-statement-offset . 4)
+     (TeX-master . "icet")
+     (checkdoc-permit-comma-termination-flag . t)
+     (checkdoc-force-docstrings-flag))))
  '(scroll-bar-mode (quote right)))
 (setq load-home-init-file t) ; don't load init file from ~/.xemacs/init.el
 
@@ -669,14 +680,14 @@ Example:
 (ansi-color-for-comint-mode-on) ; interpret and use ansi color codes in shell output windows   
 (require 'paren) ; load paren highlighting
 
-(require 'color-theme)
-(setq color-theme-is-global t)
-(color-theme-initialize)
+;;(require 'color-theme)
+;;(setq color-theme-is-global t)
+;;(color-theme-initialize)
 ;; (color-theme-calm-forest)
 ;; (color-theme-dark-laptop)
 ;; (color-theme-charcoal-black)
 ;; (color-theme-comidia)
-(color-theme-billw)
+;;(color-theme-billw)
 
 ;; (load-file "~/elisp/color-theme-solarized.el")
 ;; (color-theme-solarized-dark)
@@ -716,3 +727,12 @@ Example:
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+;; custom themes
+(add-to-list 'custom-theme-load-path "~/elisp/themes")
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
