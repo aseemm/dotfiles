@@ -680,19 +680,6 @@ Example:
 (ansi-color-for-comint-mode-on) ; interpret and use ansi color codes in shell output windows   
 (require 'paren) ; load paren highlighting
 
-;;(require 'color-theme)
-;;(setq color-theme-is-global t)
-;;(color-theme-initialize)
-;; (color-theme-calm-forest)
-;; (color-theme-dark-laptop)
-;; (color-theme-charcoal-black)
-;; (color-theme-comidia)
-;;(color-theme-billw)
-
-;; (load-file "~/elisp/color-theme-solarized.el")
-;; (color-theme-solarized-dark)
-;; (set-face-background `modeline "#626262")
-
 ;; don't create backup files
 (setq make-backup-files nil)
 
@@ -730,9 +717,4 @@ Example:
 
 ;; custom themes
 (add-to-list 'custom-theme-load-path "~/elisp/themes")
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(load-theme 'monokai t)
