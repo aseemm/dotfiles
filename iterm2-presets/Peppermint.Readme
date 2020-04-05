@@ -1,0 +1,15 @@
+# Installation
+Open Preferences pane on the Profiles tab in iTerm
+Switch to the Colors tab and import the Peppermint.itermcolors (drop-down in the lower right corner)
+
+## Text tab:
+### Cursor
+Set to Vertical
+### Text Rendering
+Disable Draw bold in bold font
+Enable Draw anti-aliased text with thin strokes
+
+## Window tab
+### Window appearance
+Transparency to 10-15%
+Blur to 40-50%

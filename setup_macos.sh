@@ -19,3 +19,5 @@ xcode-select -p
 
 Install emacs from https://emacsformacosx.com/
 /Applications/Emacs.app/Contents/MacOS/Emacs -nw
+
+Install iterm2 from https://iterm2.com/
