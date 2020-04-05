@@ -1,5 +1,6 @@
 ; -*- Emacs-Lisp -*-
 ;;
+(server-start)
 
 ;; Types
 (setq at-winnt-p (or (eq system-type `windows-nt)
