@@ -7,3 +7,4 @@ hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "
 escape ^^^^
 
 term screen-256color
+
