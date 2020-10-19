@@ -106,7 +106,6 @@ otherwise simply call previous-line."
   (if (not (comint-after-pmark-p))
       (previous-line arg)
     (comint-previous-matching-input "." arg)))
-
 (defun my-comint-next-input (arg)
   "Cycle forwards through input history if at end of buffer, 
 otherwise simply call next-line."
@@ -678,7 +677,7 @@ Example:
 (setq load-home-init-file t) ; don't load init file from ~/.xemacs/init.el
 
 (fset 'yes-or-no-p 'y-or-n-p) ; Use "y or n" answers instead of full words "yes or no"
-(ansi-color-for-comint-mode-on) ; interpret and use ansi color codes in shell output windows   
+(ansi-color-for-comint-mode-on) ; interpret and use ansi color codes in shell output windows
 (require 'paren) ; load paren highlighting
 
 ;; don't create backup files
@@ -717,5 +716,5 @@ Example:
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 ;; custom themes
-(add-to-list 'custom-theme-load-path "~/elisp/themes")
-(load-theme 'monokai t)
+;; (add-to-list 'custom-theme-load-path "~/elisp/themes")
+;; (load-theme 'solarized-dark t)
