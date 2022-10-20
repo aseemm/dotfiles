@@ -1,5 +1,12 @@
 ; -*- Emacs-Lisp -*-
 ;;
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (server-start)
 
 ;; Types
@@ -219,6 +226,10 @@ otherwise simply call next-line."
 
 (add-hook 'dired-mode-hook '(lambda ()
 			      (define-key dired-mode-map "\M-?" 'dired-random-file)))
+;; (set-face-foreground 'dired-directory "yellow")
+;; (set-face-foreground 'font-lock-comment-face "yellow" )
+(set-face-foreground 'font-lock-function-name-face "yellow" )
+(setq dired-listing-switches "-alk")
 
 ;; ;; Diary
 ;; (when (not (memq system-type '(amigados vax-vms)))
@@ -661,6 +672,9 @@ Example:
     ("85077d73b57c1f9792fd44f6321a3fd5998c69a583126a7851fe8e37cfbb254b" "4aafea32abe07a9658d20aadcae066e9c7a53f8e3dfbd18d8fa0b26c24f9082c" "f50aa7409dff79a72d530a55fdd42cbaa8217d47f83cfb1c753a289e02e49a6b" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "4c7a1f0559674bf6d5dd06ec52c8badc5ba6e091f954ea364a020ed702665aa1" default)))
  '(delete-selection-mode nil)
  '(load-home-init-file t t)
+ '(org-agenda-files
+   (quote
+    ("~/Dropbox/Documents/Org/org-mode.org" "~/Dropbox/Documents/Org/todo.org")))
  '(safe-local-variable-values
    (quote
     ((c-brace-offset . -4)
@@ -718,3 +732,99 @@ Example:
 ;; custom themes
 ;; (add-to-list 'custom-theme-load-path "~/elisp/themes")
 ;; (load-theme 'solarized-dark t)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+;; org-mode
+(require 'remember)
+(require 'org)
+(require 'org-agenda)
+
+(setq org-agenda-files '("~/Dropbox/Documents/Org"))
+;; From http://lebensverrueckt.haktar.org/articles/org-mode-Food/
+(defun recipe-template ()
+  (interactive)
+  (goto-line 0)
+  (search-forward "* Recipe")
+  (org-meta-return)
+  (org-metaright)
+  (setq recipe-name (read-string "Title: "))
+  (insert recipe-name)
+  (org-set-tags)
+  (org-meta-return)
+  (org-metaright)
+  (insert "Ingredients")
+  (org-meta-return)
+  (insert "Directions")
+  (search-backward recipe-name)
+  (org-set-property "Rating" "")
+  (setq source (read-string "Source: "))
+  (org-set-property "Source" source)
+  (setq amount (read-string "Time: "))
+  (org-set-property "Time" amount)
+  (setq amount (read-string "Serves: "))
+  (org-set-property "Serves" amount)  
+  )
+
+(defun flush-blank-lines ()
+  "Removes all blank lines from buffer or region"
+  (interactive)
+  (save-excursion
+    (let (min max)
+      (if (equal (region-active-p) nil)
+	  (mark-whole-buffer))
+      (setq min (region-beginning) max (region-end))
+      (flush-lines "^ *$" min max t))))
+
+(defun clear-shopping-list ()
+  (interactive)
+  (save-excursion
+    (goto-line 0)
+    (let ((start-shopping-list (search-forward "* Shopping List" nil t)))
+      (show-subtree)
+      (outline-next-visible-heading 1)
+      (previous-line)
+      (end-of-line)
+      (kill-region start-shopping-list (point)))))
+
+(defun gen-shopping-list ()
+  (interactive)
+  (goto-line 0)
+  (let ((start-shopping-list (search-forward "* Shopping List" nil t)))
+    (while (search-forward "** TOCOOK" nil t)
+      (show-subtree)
+      (outline-next-visible-heading 1)
+      (next-line)
+      (let ((start (point)))
+	(outline-next-visible-heading 1)
+	;;(previous-line)
+	(copy-region-as-kill start (point)))
+      (save-excursion
+	(goto-char start-shopping-list)
+	(newline)
+	(yank)
+	(show-subtree)
+	(delete-blank-lines)))
+    (goto-char start-shopping-list)
+    (org-mark-subtree)
+    (next-line)
+    (flush-blank-lines))
+  (org-table-align)
+  (previous-line)
+  (org-shifttab))
+
+;; (defun air-org-agenda-capture (&optional vanilla)
+;;   "Capture a task in agenda mode, using the date at point.
+
+;; If VANILLA is non-nil, run the standard `org-capture'."
+;;   (interactive "P")
+;;   (if vanilla
+;;       (org-capture)
+;;     (let ((org-overriding-default-time (org-get-cursor-date)))
+;;       (org-capture nil "a"))))
+
+;; (define-key org-agenda-mode-map "c" 'air-org-agenda-capture)
