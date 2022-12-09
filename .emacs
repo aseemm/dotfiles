@@ -63,8 +63,8 @@
 		      "  "))
 
 
-;; Lisp mode stuff
-(add-hook 'emacs-lisp-mode-hook 'visit-emacs-lisp-tags-table)
+;; ;; Lisp mode stuff
+;; (add-hook 'emacs-lisp-mode-hook 'visit-emacs-lisp-tags-table)
 
 ;; Html mode
 ;(setq html-quotify-hrefs-on-find nil)
@@ -698,29 +698,29 @@ Example:
 (setq make-backup-files nil)
 
 ;; webmode
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.[gj]sp\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+;; (require 'web-mode)
+;; (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.[gj]sp\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
-;; haskell mode
-(load "~/elisp/haskell-mode-2.8.0/haskell-site-file")
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+;; ;; haskell mode
+;; (load "~/elisp/haskell-mode-2.8.0/haskell-site-file")
+;; (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+;; (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
-(defun my-haskell-load-and-run ()
-  "Loads and runs the current Haskell file."
-  (interactive)
-  (let ((start-buffer (current-buffer)))
-    (inferior-haskell-load-and-run inferior-haskell-run-command)
-    (sleep-for 0 100)
-    (end-of-buffer)
-    (pop-to-buffer start-buffer)))
+;; (defun my-haskell-load-and-run ()
+;;   "Loads and runs the current Haskell file."
+;;   (interactive)
+;;   (let ((start-buffer (current-buffer)))
+;;     (inferior-haskell-load-and-run inferior-haskell-run-command)
+;;     (sleep-for 0 100)
+;;     (end-of-buffer)
+;;     (pop-to-buffer start-buffer)))
 
 ;; markdown
 (autoload 'markdown-mode "markdown-mode"
